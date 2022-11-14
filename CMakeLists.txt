@@ -15,6 +15,7 @@ add_library(FwSignSources INTERFACE)
 target_include_directories(FwSignSources INTERFACE include)
 
 add_subdirectory(src)
+add_subdirectory(external)
 
 enable_testing()
 add_subdirectory(tests)
