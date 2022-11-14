@@ -4,5 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-target_sources(fwsign PRIVATE main.cpp
+target_sources(FwSign PRIVATE main.cpp)
+
+# tests implement their own main function - not adding main.cpp here
+target_sources(FwSignSources INTERFACE
 	World.cpp)
