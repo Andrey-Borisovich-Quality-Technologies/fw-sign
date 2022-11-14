@@ -13,6 +13,7 @@ class World
 {
 public:
 	std::string_view greet();
+	int parse(const std::string_view toml);
 
 private:
 	std::string_view greeting = {"Hello!"};
