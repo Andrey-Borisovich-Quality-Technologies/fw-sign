@@ -1,4 +1,4 @@
-name: Build FwSign
+name: Build and unit test FwSign
 
 on:
   pull_request:
@@ -33,6 +33,29 @@ jobs:
         name: linux-build-artifacts
         path: ${{github.workspace}}/build
 
+  run_unit_tests_linux:
+    needs: build_linux
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout pull request HEAD
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+
+    - name: Download Linux build artifacts
+      uses: actions/download-artifact@v3.0.0
+      with:
+        name: linux-build-artifacts
+        path: ${{github.workspace}}/build
+
+    - name: Relax build artifacts permissions
+      run: sudo chmod 777 -R ${{github.workspace}}/build
+
+    - name: Run Unit Tests
+      working-directory: ${{github.workspace}}
+      run: ctest --preset x64-debug-linux
+
+
   build_windows:
     runs-on: windows-latest
 
@@ -60,3 +83,23 @@ jobs:
       with:
         name: windows-build-artifacts
         path: ${{github.workspace}}\build
+
+  run_unit_tests_windows:
+    needs: build_windows
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout pull request HEAD
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+
+    - name: Download Windows build artifacts
+      uses: actions/download-artifact@v3.0.0
+      with:
+        name: windows-build-artifacts
+        path: ${{github.workspace}}\build
+
+    - name: Run Unit Tests
+      working-directory: ${{github.workspace}}
+      run: ctest --preset x64-debug-windows
