@@ -8,10 +8,15 @@ cmake_minimum_required (VERSION 3.22)
 
 project(FwSign DESCRIPTION "Firmware image creation and signing tool" LANGUAGES CXX)
 
-add_executable(fwsign)
+add_executable(FwSign)
+set_target_properties(FwSign PROPERTIES CXX_STANDARD 17)
 
-set_property(TARGET fwsign PROPERTY CXX_STANDARD 17)
-
-target_include_directories(fwsign PRIVATE include)
+add_library(FwSignSources INTERFACE)
+target_include_directories(FwSignSources INTERFACE include)
 
 add_subdirectory(src)
+
+enable_testing()
+add_subdirectory(tests)
+
+target_link_libraries(FwSign PRIVATE FwSignSources)
