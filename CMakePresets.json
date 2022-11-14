@@ -76,5 +76,31 @@
       "displayName": "x64 Debug Linux",
       "configurePreset": "x64-debug-linux"
     }
+  ],
+  "testPresets": [
+    {
+      "name": "x64-debug-windows",
+      "displayName": "x64 Debug Windows",
+      "description": "Executes unit tests for x64 Debug Windows configuration",
+      "configurePreset": "x64-debug-windows",
+      "execution": {
+        "noTestsAction": "error",
+        "stopOnFailure": false,
+        "scheduleRandom": true,
+        "timeout": 600
+      }
+    },
+    {
+      "name": "x64-debug-linux",
+      "displayName": "x64 Debug Linux",
+      "description": "Executes unit tests for x64 Debug Linux configuration",
+      "configurePreset": "x64-debug-linux",
+      "execution": {
+        "noTestsAction": "error",
+        "stopOnFailure": false,
+        "scheduleRandom": true,
+        "timeout": 600
+      }
+    }
   ]
 }
