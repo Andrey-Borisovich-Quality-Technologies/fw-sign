@@ -1,0 +1,37 @@
+name: CppCheck analysis
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Analize GCC
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: cppcheck
+        uses: deep5050/cppcheck-action@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN}}
+          check_library:
+          skip_preprocessor:
+          enable:
+          exclude_check:
+          inconclusive:
+          inline_suppression:
+          force_language: c++
+          force:
+          max_ctu_depth: 4
+          platform:
+          std: c++17
+          output_file:
+          other_options:
