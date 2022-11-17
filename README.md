@@ -11,8 +11,8 @@ Minimal requirements are:
 - [CMake](https://cmake.org/download/) 3.22 or newer
 - for Linux: gcc7+
 - for Windows: MSVC 19.32+
-P
-roject uses C++17, language support table across compilers can be found [here](https://en.cppreference.com/w/cpp/compiler_support/17#C.2B.2B17_library_features).
+
+Project uses C++17, language support table across compilers can be found [here](https://en.cppreference.com/w/cpp/compiler_support/17#C.2B.2B17_library_features).
 
 Currently supported operating systems:
 - Windows
