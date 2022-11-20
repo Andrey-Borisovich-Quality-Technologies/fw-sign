@@ -18,6 +18,6 @@ add_subdirectory(src)
 add_subdirectory(external)
 
 enable_testing()
-add_subdirectory(tests)
+add_subdirectory(test)
 
 target_link_libraries(FwSign PRIVATE FwSignSources)
