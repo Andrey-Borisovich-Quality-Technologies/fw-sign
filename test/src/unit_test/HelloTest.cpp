@@ -6,7 +6,7 @@
 #include <gtest/gtest.h>
 #include <fwsign/World.hpp>
 
-namespace fwsign::unit_test
+namespace fwsign::test::unit_test
 {
 
 // Demonstrate some basic assertions.
