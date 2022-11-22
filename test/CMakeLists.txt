@@ -17,8 +17,9 @@ FetchContent_MakeAvailable(googletest)
 add_executable(FwSignUnitTests)
 set_target_properties(FwSignUnitTests PROPERTIES CXX_STANDARD 17)
 target_link_libraries(FwSignUnitTests PUBLIC FwSignSources)
-target_sources(FwSignUnitTests PRIVATE
-	src/HelloTest.cpp)
+
+add_subdirectory(include)
+add_subdirectory(src)
 
 target_link_libraries(FwSignUnitTests PRIVATE gtest gtest_main gmock)
 
