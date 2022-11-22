@@ -11,4 +11,5 @@ target_include_directories(FwSignSources INTERFACE ${CMAKE_CURRENT_LIST_DIR})
 # and if header file changes then all compilation units including it will
 # be rebuild.
 target_sources(FwSignSources INTERFACE
-	fwsign/World.hpp)
+	fwsign/World.hpp
+	fwsign/TomlReader.hpp)

@@ -8,4 +8,5 @@ target_sources(FwSign PRIVATE main.cpp)
 
 # tests implement their own main function - not adding main.cpp here
 target_sources(FwSignSources INTERFACE
-	World.cpp)
+	World.cpp
+	TomlReader.cpp)
