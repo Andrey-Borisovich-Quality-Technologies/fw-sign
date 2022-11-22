@@ -12,6 +12,7 @@ add_executable(FwSign)
 set_target_properties(FwSign PROPERTIES CXX_STANDARD 17)
 
 add_library(FwSignSources INTERFACE)
+target_compile_options(FwSignSources INTERFACE "$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
 
 add_subdirectory(include)
 add_subdirectory(src)
