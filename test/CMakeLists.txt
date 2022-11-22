@@ -24,3 +24,6 @@ target_link_libraries(FwSignUnitTests PRIVATE gtest gtest_main gmock)
 
 include(GoogleTest)
 gtest_discover_tests(FwSignUnitTests)
+
+# Copy test resource files
+configure_file(${PROJECT_SOURCE_DIR}/config/mtl.toml ${CMAKE_CURRENT_BINARY_DIR}/mtl.toml COPYONLY)
