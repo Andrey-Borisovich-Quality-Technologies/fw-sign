@@ -5,4 +5,5 @@
 #
 
 target_sources(FwSignUnitTests PRIVATE
-	"unit_test/HelloTest.cpp")
+	"unit_test/HelloTest.cpp"
+	"test_utils/FileHandler.cpp")
