@@ -27,4 +27,4 @@ include(GoogleTest)
 gtest_discover_tests(FwSignUnitTests)
 
 # Copy test resource files
-configure_file(${PROJECT_SOURCE_DIR}/config/mtl.toml ${CMAKE_CURRENT_BINARY_DIR}/mtl.toml COPYONLY)
+configure_file(${PROJECT_SOURCE_DIR}/config/mtl.toml ${CMAKE_CURRENT_BINARY_DIR}/config/mtl.toml COPYONLY)

@@ -7,4 +7,5 @@
 target_include_directories(FwSignUnitTests PRIVATE ${CMAKE_CURRENT_LIST_DIR})
 
 target_include_directories(FwSignUnitTests PRIVATE
-	"fwsign/test_utils/Filehandler.hpp")
+	"fwsign/test_utils/Filehandler.hpp"
+	"fwsign/test_utils/TomlReaderTestFixture.hpp")
