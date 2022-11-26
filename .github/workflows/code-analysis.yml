@@ -25,7 +25,7 @@ jobs:
 
     steps:
       - name: Enable Developer Command Prompt
-        uses: ilammy/msvc-dev-cmd@v1.10.0
+        uses: ilammy/msvc-dev-cmd@v1.12.0
         with:
           arch: amd64
 
@@ -53,7 +53,7 @@ jobs:
 
       # Upload SARIF file as an Artifact to download and view
       - name: Upload SARIF as an Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.1
         with:
           name: sarif-file
           path: ${{ steps.run-analysis.outputs.sarif }}

@@ -30,7 +30,7 @@ jobs:
       run: cmake --build --preset x64-debug-linux
 
     - name: Upload Linux build artifacts
-      uses: actions/upload-artifact@v3.1.0
+      uses: actions/upload-artifact@v3.1.1
       with:
         name: linux-build-artifacts
         path: ${{github.workspace}}/build
@@ -45,7 +45,7 @@ jobs:
         ref: ${{ github.event.pull_request.head.sha }}
 
     - name: Download Linux build artifacts
-      uses: actions/download-artifact@v3.0.0
+      uses: actions/download-artifact@v3.0.1
       with:
         name: linux-build-artifacts
         path: ${{github.workspace}}/build
@@ -63,7 +63,7 @@ jobs:
 
     steps:
     - name: Enable Developer Command Prompt
-      uses: ilammy/msvc-dev-cmd@v1.10.0
+      uses: ilammy/msvc-dev-cmd@v1.12.0
       with:
         arch: amd64
 
@@ -81,7 +81,7 @@ jobs:
       run: cmake --build --preset x64-debug-windows
 
     - name: Upload Windows build artifacts
-      uses: actions/upload-artifact@v3.1.0
+      uses: actions/upload-artifact@v3.1.1
       with:
         name: windows-build-artifacts
         path: ${{github.workspace}}\build
@@ -97,7 +97,7 @@ jobs:
         ref: ${{ github.event.pull_request.head.sha }}
 
     - name: Download Windows build artifacts
-      uses: actions/download-artifact@v3.0.0
+      uses: actions/download-artifact@v3.0.1
       with:
         name: windows-build-artifacts
         path: ${{github.workspace}}\build
