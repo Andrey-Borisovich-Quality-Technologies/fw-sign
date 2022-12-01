@@ -14,6 +14,10 @@
         "type": "equals",
         "lhs": "${hostSystemName}",
         "rhs": "Windows"
+      },
+      "environment": {
+        // there is no other way to build OpenSSL project on Windows 
+        "PATH": "$penv{PATH};${sourceDir}\\external\\nasm;"
       }
     },
     {
