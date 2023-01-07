@@ -8,6 +8,10 @@ on:
     # Allow this workflow to be run from other workflows
   workflow_call:
 
+# Specifies group name that stops previous wokrflows if the name matches
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.head_ref || github.ref }}
+
 jobs:
   build_linux:
     runs-on: ubuntu-latest
