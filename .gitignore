@@ -38,3 +38,7 @@ install/
 *.exe
 *.out
 *.app
+
+# Ignore external artifacts except CMakeLists.txt file
+external/*
+!external/CMakeLists.txt
